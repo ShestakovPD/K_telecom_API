@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Equipment;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateEquipment extends FormRequest
 {
@@ -13,9 +14,9 @@ class UpdateEquipment extends FormRequest
      */
     public function authorize()
     {
-        /*return false;*/
-        return true;
-        /*return Auth::check();*/
+        //return false;
+       // return true;
+        return Auth::check();
         /*return auth()->check();*/
     }
 
@@ -26,23 +27,22 @@ class UpdateEquipment extends FormRequest
      */
     public function rules()
     {
-
         return [
             'id_equipment_type' =>  'required',/*'unique:App\Models\Equipment,id_equipment_type',*/
-            'serial_number' => 'required', /*|unique:App\Models\Equipment,serial_number',*/
-            /*  'regex:/^([A-Z0-9]{2}[A-Z]{5}[A-Z0-9]{1})$/',
-
-              'regex:/^([A-Z0-9]{2}[A-Z]{5}[A-Z0-9]{1}[A-Z]{2})$/'],*/
-
+            'serial_number' => 'required|unique:App\Models\Equipment|regex:/^([A-Z0-9]{2}[A-Z]{5}[A-Z0-9]{1}[A-Z]{2})$/',
             'note' => 'required'
         ];
 
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
-            'serial_number.required' => 'Hey! You have to fill in the :attribute field.'
+            'id_equipment_type.required' => 'Вы не ввели данные в поле :attribute.',
+            'serial_number.required' => 'Вы не ввели данные в поле :attribute.',
+            'serial_number.unique' => 'Вы ввели данные, которые уже есть в базе в поле :attribute, и точно с ними совпадают.',
+            'serial_number.regex' => 'Вы ввели данные в поле :attribute, которые не соответствуют заданной маске',
+            'note.required' => 'Вы не ввели данные в поле :attribute.',
         ];
     }
 
