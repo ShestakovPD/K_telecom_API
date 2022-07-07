@@ -13,13 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('equipment_types', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('type_name');
+            $table->string('serial_mask');
+            $table->timestamps();
+        });
+
         Schema::create('equipment', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_equipment_type');
+            /*$table->foreignId('id_equipment_type')->constrained()->onDelete('cascade');*/
+            $table->unsignedBigInteger('id_equipment_type');
+            $table->foreign('id_equipment_type')->references('id')->on('equipment_types')->onDelete('cascade');
             $table->string('serial_number');
             $table->string('note');
             $table->timestamps();
-
+            $table->softDeletes();
         });
     }
     /**
