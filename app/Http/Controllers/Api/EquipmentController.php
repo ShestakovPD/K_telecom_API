@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Equipment\StoreEquipment;
-use App\Http\Requests\Equipment\UpdateEquipment;
+use App\Http\Requests\Equipment\StoreEquipmentRequest;
+use App\Http\Requests\Equipment\UpdateEquipmentRequest;
 use App\Http\Resources\EquipmentResource;
 use App\Models\Equipment;
 use Illuminate\Contracts\Support\ValidatedData;
@@ -37,7 +37,7 @@ class EquipmentController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public static function store(StoreEquipment $request)
+    public static function store(StoreEquipmentRequest $request)
     {
 
         $equipment = Equipment::create($request->validated());
@@ -65,7 +65,7 @@ class EquipmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateEquipment $request
+     * @param UpdateEquipmentRequest $request
      * @param Equipment $equipment
      * @return Equipment
      */
@@ -77,7 +77,7 @@ class EquipmentController extends Controller
         return $equipment;
     }*/
 
-    public static function update(UpdateEquipment $request, Equipment $equipment)
+    public static function update(UpdateEquipmentRequest $request, Equipment $equipment)
     {
 
         $equipment->update($request->validated());

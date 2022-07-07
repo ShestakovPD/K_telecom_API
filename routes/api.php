@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Equipment_type_Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
@@ -32,3 +33,7 @@ Route::get('/search', [EquipmentController::class, 'search'])->name('search');
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('auth/logout', [AuthController::class, 'logout']);
 });
+
+Route::apiResource('equipment_type', \App\Http\Controllers\Api\Equipment_type_Controller::class);
+
+Route::get('/search', [\App\Http\Controllers\Api\Equipment_type_Controller::class, 'search_t'])->name('search_t');

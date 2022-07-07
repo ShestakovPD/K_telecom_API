@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests\Equipment;
 
+use App\Http\Controllers\Api\Equipment_type_Controller;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateEquipment extends FormRequest
+class UpdateEquipmentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,6 +28,8 @@ class UpdateEquipment extends FormRequest
      */
     public function rules()
     {
+
+
         return [
             'id_equipment_type' =>  'required',/*'unique:App\Models\Equipment,id_equipment_type',*/
             'serial_number' => 'required|unique:App\Models\Equipment|regex:/^([A-Z0-9]{2}[A-Z]{5}[A-Z0-9]{1}[A-Z]{2})$/',

@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Equipment_type extends Model
 {
     use HasFactory;
-    protected $table ='equipment_types';
+
+    public $table ='equipment_types';
+
+    protected $fillable = ['id', 'type_name', 'serial_mask'];
+
 }
