@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('equipment', EquipmentController::class)->middleware('auth:sanctum');
-Route::get('/api/equipment/{id}', 'EquipmentController@store');
+/*Route::get('/api/equipment/{id}', 'EquipmentController@store');*/
 
 Route::post('auth/register', [AuthController::class, 'createUser']);
 Route::post('auth/login', [AuthController::class, 'loginUser'])->name('login');

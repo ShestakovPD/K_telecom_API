@@ -23,4 +23,5 @@ class Equipment extends Model
     protected $fillable = ['id_equipment_type','serial_number','note'];
 
 
+
 }

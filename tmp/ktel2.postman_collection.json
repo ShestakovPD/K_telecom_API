@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "b4924bcb-91dd-4513-a04d-6c0373beb319",
+		"name": "ktel2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21583902"
+	},
+	"item": [
+		{
+			"name": "http://ktel/api/equipment/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_equipment_type",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "serial_number",
+							"value": "YYTTTTT8SS",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "prim",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_equipment_type",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "serial_number",
+							"value": "ERIEREI",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "note",
+							"value": "prim",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment/12",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment/update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "9",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id_equipment_type",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "serial_number",
+							"value": "5HHHH3@EEE",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "prim555",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment/5",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment",
+						"5"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "POST",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id_equipment_type",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "serial_number",
+							"value": "ERIEREI333",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "note",
+							"value": "prim232",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "s",
+							"value": "Y",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment/search",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment",
+						"search"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "11pasha",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "11pasha@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "11pasha@mail.ru",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "11pasha@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/auth/logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "11pasha@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ktel2/api/equipment/3",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment_type",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ktel2/api/equipment_type",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment_type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment_type/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ktel2/api/equipment_type/2",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment_type",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment_type /reg",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "2222",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "POST",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment_type/reg",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment_type",
+						"reg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://ktel/api/equipment_type /search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|zy3GeFJBK0RDnpYbRBiXYHcBJ7kjC63S5YcUldoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "s",
+							"value": "D",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "s",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ktel2/api/equipment/search",
+					"protocol": "http",
+					"host": [
+						"ktel2"
+					],
+					"path": [
+						"api",
+						"equipment",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

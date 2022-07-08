@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
 
-
 class EquipmentController extends Controller
 {
     public $id_equipment_type;
@@ -85,8 +84,6 @@ class EquipmentController extends Controller
         return $equipment;
     }
 
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -115,10 +112,6 @@ class EquipmentController extends Controller
             ->OrWhere('serial_number','LIKE', '%' . $s . '%')
             ->OrWhere('note','LIKE', '%' . $s . '%')
             ->get();
-
-        /*return view ('welcome', [
-            'equipment_s' => $equipment_s,
-        ]);*/
 
         return response()->json([
             'equipment_s' => $equipment_s

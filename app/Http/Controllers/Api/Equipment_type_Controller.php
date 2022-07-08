@@ -25,7 +25,7 @@ class Equipment_type_Controller extends Controller
     public function index()
     {
         //view('index');
-        return Equipment_type_Resource::collection(Equipment_type::aall());
+        return Equipment_type_Resource::collection(Equipment_type::all());
 
     }
 
@@ -104,8 +104,8 @@ class Equipment_type_Controller extends Controller
         $s = $request->s;
 
         $equipment_t = Equipment_type::where('id', 'LIKE', '%' . $s . '%')
-            ->OrWhere('serial_mask', 'LIKE', '%' . $s . '%')
             ->OrWhere('type_name', 'LIKE', '%' . $s . '%')
+            ->OrWhere('serial_mask', 'LIKE', '%' . $s . '%')
             ->get();
 
         /*return view ('welcome', [
