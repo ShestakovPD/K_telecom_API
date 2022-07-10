@@ -33,20 +33,24 @@ class EquipmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param StoreEquipmentRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public static function store(StoreEquipmentRequest $request)
     {
 
         $equipment = Equipment::create($request->validated());
         $equipment = new EquipmentResource($equipment);
-        $equipment_s = EquipmentResource::collection(Equipment::all());
+        /*  $equipment_s = EquipmentResource::collection(Equipment::all());
 
-        return response()->view ('welcome', [
-            /*            'equipment_s' => new EquipmentResource($equipment),*/
-            'equipment_s' => $equipment_s
-        ]);
+          return response()->view ('welcome', [
+                        // 'equipment_s' => new EquipmentResource($equipment),
+              'equipment_s' => $equipment_s
+          ]);*/                                         // для отображения во view
+
+        return response()->json([
+            'equipment' => $equipment
+        ], 200);
     }
 
     /**
@@ -68,13 +72,6 @@ class EquipmentController extends Controller
      * @param Equipment $equipment
      * @return Equipment
      */
-   /* public static function update(UpdateEquipment $request, Equipment $equipment)
-    {
-
-        $equipment->update($request->validated());
-
-        return $equipment;
-    }*/
 
     public static function update(UpdateEquipmentRequest $request, Equipment $equipment)
     {
@@ -87,8 +84,8 @@ class EquipmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Equipment $equipment
+     * @return \Illuminate\Http\JsonResponse
      */
     public static function destroy(Equipment $equipment)
     {
@@ -96,21 +93,31 @@ class EquipmentController extends Controller
         $equipment->delete();
         $equipment_s = EquipmentResource::collection(Equipment::all());
 
-        /* return response(null);*/
+        /*return response(null);
 
         return response()->view ('welcome', [
             'equipment_s' => $equipment_s,
-        ]);
+        ]);*/      // для отображения во view
+
+        return response()->json([
+            'equipment_s' => $equipment_s
+        ], 200);
 
     }
 
-    public static function search(Request $request)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public static function search(Request $request): \Illuminate\Http\JsonResponse
     {
         $s = $request->s;
 
         $equipment_s = Equipment::where('id_equipment_type', 'LIKE', '%' . $s . '%')
-            ->OrWhere('serial_number','LIKE', '%' . $s . '%')
-            ->OrWhere('note','LIKE', '%' . $s . '%')
+            ->OrWhere('serial_number', 'LIKE', '%' . $s . '%')
+            ->OrWhere('note', 'LIKE', '%' . $s . '%')
             ->get();
 
         return response()->json([

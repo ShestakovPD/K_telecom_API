@@ -16,12 +16,11 @@ class Equipment extends Model
      *
      * @var array
      */
-    protected $table ='equipment';
+    protected $table = 'equipment';
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['id_equipment_type','serial_number','note'];
-
+    protected $fillable = ['id_equipment_type', 'serial_number', 'note'];
 
 
 }

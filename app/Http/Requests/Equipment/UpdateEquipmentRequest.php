@@ -18,22 +18,21 @@ class UpdateEquipmentRequest extends FormRequest
     {
         //return false;
        // return true;
-        return Auth::check();
+        return Auth::check(); 
         /*return auth()->check();*/
     }
-
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return string[]
      */
+
     public function rules()
     {
-        $equipment_types = \App\Models\Equipment_type::all();
+/*        $equipment_types = \App\Models\Equipment_type::all();
 
         foreach ($equipment_types as $equipment_type){
-            /*echo 'Equipment: '.$equipment_type['type_name'].'<br>';*/
             $ser = str_split($equipment_type['serial_mask']);
             $i=0;
             foreach ($ser as $sumb) {
@@ -63,7 +62,7 @@ class UpdateEquipmentRequest extends FormRequest
 
             $arrs_reg[] = implode($arr_w);
 
-        }
+        }*/   // проект реализации проверки на соответствие регулярному выражению по серийной маске
 
         return [
             'id_equipment_type' =>  'required',/*'unique:App\Models\Equipment,id_equipment_type',*/
@@ -73,9 +72,11 @@ class UpdateEquipmentRequest extends FormRequest
 
         ];
 
-
     }
 
+    /**
+     * @return string[]
+     */
     public function messages(): array
     {
         return [

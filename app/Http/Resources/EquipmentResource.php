@@ -9,7 +9,7 @@ class EquipmentResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
@@ -20,8 +20,8 @@ class EquipmentResource extends JsonResource
             'id_equipment_type' => $this->id_equipment_type,
             'serial_number' => $this->serial_number,
             'note' => $this->note,
-            'created_at' => (string) $this->created_at,
-            'updated_at' => (string) $this->updated_at,
+            'created_at' => (string)$this->created_at,
+            'updated_at' => (string)$this->updated_at,
         ];
     }
 }

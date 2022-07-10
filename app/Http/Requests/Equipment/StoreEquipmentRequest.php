@@ -28,7 +28,7 @@ class StoreEquipmentRequest extends FormRequest
     {
 
         return [
-            'id_equipment_type' =>  'required',/*'unique:App\Models\Equipment,id_equipment_type',*/
+            'id_equipment_type' => 'required',/*'unique:App\Models\Equipment,id_equipment_type',*/
             'serial_number' => 'required', /*|unique:App\Models\Equipment,serial_number',*/
             /*  'regex:/^([A-Z0-9]{2}[A-Z]{5}[A-Z0-9]{1})$/',
 
@@ -39,6 +39,11 @@ class StoreEquipmentRequest extends FormRequest
 
     }
 
+    /**
+     * Message error validation
+     *
+     * @return string[]
+     */
     public function messages()
     {
         return [
